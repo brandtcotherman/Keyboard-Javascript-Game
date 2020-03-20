@@ -1,0 +1,52 @@
+<html>
+<head>
+  <title>Keyboard Game</title>
+  <h1>Press this key!</h1>
+  <div id="key"></div>
+
+  <script type="text/javascript">
+    console.log('Javascript loaded');//While using google chrome and code is running.  Right click, select inspect, & select console.  To show code is running.
+
+    var goal = 1;//Starts with user pressing 1
+    document.getElementById("key").innerHTML = goal;
+
+    function randomKey(){//Random selects which number key to press
+        goal = Math.floor(Math.random() * 4) + 1;//returns a random integer from 1 to 4
+        document.getElementById("key").innerHTML = goal;
+    }
+          
+    document.addEventListener('keyup', (event) => {//Listening for keyboard button being pressed
+        if (event.key == '1') {//If key 1 is pressed
+            //alert(event.key+" Pressed");//alerts can be used to help show code is working
+            if(event.key == goal){//If statement checking for match with key pressed and goal variable generated
+                randomKey();//Call randomKey to Generate next key to press
+                //alert("Correct");//alerts can be used to help show code is working
+            }
+        }
+        if (event.key == '2') {
+            //alert(event.key+" Pressed");
+            if(event.key == goal){
+                randomKey();
+                //alert("Correct");
+            }
+        }
+        if (event.key == '3') {
+            //alert(event.key+" Pressed");
+            if(event.key == goal){
+                randomKey();
+                //alert("Correct");
+            }
+        }
+        if (event.key == '4') {
+            //alert(event.key+" Pressed");
+            if(event.key == goal){
+                randomKey();
+                //alert("Correct");
+            }
+        }
+    });
+  </script>
+</head>
+<body>
+</body>
+</html>
